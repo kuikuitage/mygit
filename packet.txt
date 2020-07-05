@@ -1,0 +1,5 @@
+quic文档中文地址
+http://docs.wxclimb.top/draft-ietf-quic-transport-zh.html#send-vn
+
+https://github.com/kuikuitage/zh-translations
+
