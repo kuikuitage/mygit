@@ -1,0 +1,4 @@
+1.UDP本身不面向连接，按照QUIC描述应该quic讲UDP封装成TCP的形式进行调用的，本身不应该是监听收到客户端连接后，send直接发送数据吗。
+但实际上demo所示quic的server和client在发送完测试数据后，都关闭了连接，还是主动中断libev的时间轮训，不管是超时导致的连接关闭，这个关闭是否是必要的。
+2.按照VideoAgent的了解，VideoAgent是作为一个server，有acceptEntry有客户端连接进来时，创建clientservice进行，send其实是使用clientservice进行数据发送的，但是这个clientservice的实现，以及如何通过这个clientserver向原来client进行通信这块还没弄明白。
+
