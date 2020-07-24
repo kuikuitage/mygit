@@ -1,0 +1,21 @@
+如何在64系统的rust下编译32位的rust程序或库
+
+0.已离线安装64位的rust
+	https://forge.rust-lang.org/infra/other-installation-methods.html
+	x86_64-unknown-linux-gnu		==》linux x86_64
+
+1.rust离线安装包默认没有将rustup命令加到环境变量或者没有自带rustup工具,因为之前离线安装后默认就能执行cargo，rustc却不能执行ustup，所以以为没有就先卸载了。
+2.从rust离线安装包中安装脚本进行卸载已安装的rust
+3.配置代理后
+	根据https://wiki.jikexueyuan.com/index.php/project/rust-primer/install/rustup.html
+	#curl https://sh.rustup.rs -sSf | sh
+	进行安装后，查看~/.cargo/bin/下生成的有rustup，但没有加到环境变量，手动添加~/.cargo/bin目录到$PATH
+4.#rust target list查看支持的目标系统工具链
+	包括i686-unknown-linux-gnu
+	
+5.查到资料说明
+	https://forge.rust-lang.org/release/platform-support.html
+	这个i686其实是i386的子集，x86_64才指64位，几年前遇到过这个坑。。。
+	i686-unknown-linux-gnu	?	?	?	32-bit Linux (kernel 2.6.32+, glibc 2.11+)
+	
+	
