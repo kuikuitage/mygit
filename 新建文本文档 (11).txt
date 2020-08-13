@@ -1,0 +1,21 @@
+编码比特率：音视频数据进行编码时每秒编码出的数据量。
+
+编码码率控制方式：CBR固定比特率编码，VBR动态比特率编码
+CBR不管画面复杂度(比如移动，亮度变化)统一使用固定的码率进行编码。VBR根据画面复杂度，动态调整编码某个画面的比特率
+从而达到复杂画面使用编码更多的数据量，简单画面使用较少的数据量。
+
+
+四种画质级别,分别是baseline, extended, main, high
+压缩比例来说，baseline< main < high 
+
+
+level不同级别对应不同的编码参数，主要是不同profile的码率https://www.cnblogs.com/tinywan/p/6404411.html，
+
+CRF(Constant Rate Factor): 范围 0-51: 0是编码毫无丢失信息, 23 is 默认, 51 是最差的情况。相对合理的区间是18-28.
+值越大，压缩效率越高，但也意味着信息丢失越严重，输出图像质量越差。
+
+CRF，恒定Rate Factor （码率系数）缺省值23
+https://blog.csdn.net/chenchong_219/article/details/43941633
+
+idc_level
+https://blog.csdn.net/heanyu/article/details/6204414
